@@ -29,7 +29,7 @@ In our paper,  we aim to boost the success rates of targeted attack. Consider ta
 
 ![](https://github.com/qilong-zhang/patch-wise-iterative-attack/blob/master/readme_img/cam.png)
 
-![result](https://github.com/qilong-zhang/patch-wise-iterative-attack/blob/master/readme_img/result.png)
+![](https://github.com/qilong-zhang/patch-wise-iterative-attack/blob/master/readme_img/result.png)
 
 
 
