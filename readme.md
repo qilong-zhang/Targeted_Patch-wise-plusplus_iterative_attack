@@ -27,7 +27,7 @@ This paper is the extension of [Patch-wise Attack for Fooling Deep Neural Networ
 
 ## Results
 
-![](https://github.com/qilong-zhang/targeted_patch-wise-plusplus_iterative_attack/blob/master/readme_img/CAM.png)
+![](https://github.com/qilong-zhang/Targeted_Patch-wise-plusplus_iterative_attack/blob/main/readme_img/CAM.png)
 
 ![](https://github.com/qilong-zhang/targeted_patch-wise-plusplus_iterative_attack/blob/master/readme_img/result.png)
 
