@@ -29,17 +29,6 @@ This paper is the extension of [Patch-wise Attack for Fooling Deep Neural Networ
  
 ![](https://github.com/qilong-zhang/Targeted_Patch-wise-plusplus_iterative_attack/blob/main/readme_img/result.png)
 
-## Citing this work
-
-If you find this work is useful in your research, please consider citing:
-
-```
-@inproceedings{Zhang2020PatchWise++,
-    title={Patch-wise++ Perturbation for Adversarial Targeted Attacks},
-    author={Gao, Lianli and Zhang, Qilong and Song, Jingkuan and Liu and Shen, Hengtao},
-    year={2020}
-}
-```
 
 
 
