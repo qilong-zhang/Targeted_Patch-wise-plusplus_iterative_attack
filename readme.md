@@ -25,7 +25,7 @@ This paper is the extension of [Patch-wise Attack for Fooling Deep Neural Networ
 
 **Note:**
 To get the better performance, you may need to put three parameters (i.e. `beta`, `gamma`, `temperature`) into the `tf.while_loop()` fuction.
-However, it is not clear why the performance of directly putting these parameter into `graph()` fuction (e.g. `DTPI-FGSM++_for_EAT.py`) is slightly worse, perhaps a bug?
+However, it is not clear why the performance of directly putting these parameter into `graph()` fuction is slightly worse, perhaps a bug?
 ```python
 i = tf.constant(0)
 
