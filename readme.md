@@ -23,7 +23,20 @@ This paper is the extension of [Patch-wise Attack for Fooling Deep Neural Networ
 
 - The output images are in "output/"
 
+**Note:**
+To get the better performance, you may need to put three parameters (i.e. `beta`, `gamma`, `temperature`) into the `tf.while_loop()` fuction.
+However, it is not clear why the performance of directly putting these parameter into `graph()` fuction is slightly worse, perhaps a bug?
+```python
+i = tf.constant(0)
 
+beta = tf.constant(FLAGS.amplification_factor, tf.float32)
+gamma = tf.constant(FLAGS.project_factor)
+temperature = tf.constant(FLAGS.temperature)
+
+grad = tf.zeros(shape=batch_shape)
+amplification = tf.zeros(shape=batch_shape)
+x_adv, _, _, _, _, _, _, _, _, _, _ = tf.while_loop(stop, graph, [adv_img, y, t_y, i, x_max, x_min, grad, amplification, beta, gamma, temperature])
+ ```
 
 ## Results
  
