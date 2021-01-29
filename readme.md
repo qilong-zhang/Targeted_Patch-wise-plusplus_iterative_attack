@@ -29,7 +29,7 @@ However, it is not clear why the performance of directly putting these parameter
 ```python
 i = tf.constant(0)
 
-beta = tf.constant(FLAGS.amplification_factor, tf.float32)
+beta = tf.constant(FLAGS.amplification_factor)
 gamma = tf.constant(FLAGS.project_factor)
 temperature = tf.constant(FLAGS.temperature)
 
