@@ -48,7 +48,7 @@ x_adv, _, _, _, _, _, _, _, _, _, _ = tf.while_loop(stop, graph, [adv_img, y, t_
 If you find this work is useful in your research, please consider citing:
 
 ```
-@inproceedings{Zhang2020PatchWise++,
+@inproceedings{GaoZhang2020PatchWise++,
     title={Patch-wise++ Perturbation for Adversarial Targeted Attacks},
     author={Gao, Lianli and Zhang, Qilong and Song, Jingkuan and Shen, Hengtao},
     journal   = {CoRR},
