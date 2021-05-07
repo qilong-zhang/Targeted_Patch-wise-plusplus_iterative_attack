@@ -9,7 +9,7 @@ This paper is the extension of [Patch-wise Attack for Fooling Deep Neural Networ
 - Download the models
 
   - [Normlly trained models](https://github.com/tensorflow/models/tree/master/research/slim#Pretrained)
-  - [Ensemble  adversarial trained models](https://github.com/tensorflow/models/tree/master/research/adv_imagenet_models?spm=5176.12282029.0.0.3a9e79b7cynrQf)
+  - [Ensemble  adversarial trained models](https://github.com/tensorflow/models/tree/archive/research/adv_imagenet_models)
   
 - Then put these models into ".models/"
 
