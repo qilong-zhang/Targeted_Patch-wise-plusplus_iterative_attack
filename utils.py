@@ -6,10 +6,11 @@ import tensorflow as tf
 
 
 def load_images(input_dir, csv_file, index, batch_shape):
-    """Images for inception classifier are normalized to be in [-1, 1] interval"""
     images = np.zeros(batch_shape)
+    # sharpen_images = np.zeros(batch_shape)
     filenames = []
     truelabel = []
+    targetlabel = []
     idx = 0
     for i in range(index, min(index + batch_shape[0], 1000)):
         img_obj = csv_file.loc[i]
@@ -18,10 +19,10 @@ def load_images(input_dir, csv_file, index, batch_shape):
         images[idx, ...] = np.array(Image.open(img_path)).astype(np.float) / 255.0
         filenames.append(ImageID)
         truelabel.append(img_obj['TrueLabel'])
+        targetlabel.append(img_obj['TargetClass'])
         idx += 1
-
     images = images * 2.0 - 1.0
-    return images, filenames, truelabel
+    return images, filenames, truelabel, targetlabel
 
 def save_images(images, filenames, output_dir):
     """Saves images to the output directory."""
