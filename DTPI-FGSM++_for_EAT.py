@@ -55,6 +55,7 @@ tf.flags.DEFINE_float('project_factor', 1.0, 'To control the weight of project t
 tf.flags.DEFINE_float('temperature', 1.5, 'To soften the output probability distribution.')
 FLAGS = tf.flags.FLAGS
 
+num_of_K = 1.5625  # 100 / 64
 T_kern = gkern(15, 3)
 P_kern, kern_size = project_kern(3)
 
@@ -145,11 +146,11 @@ def graph(adv, y, t_y, i, x_max, x_min, grad, amplification):
     # noise = noise / tf.reduce_mean(tf.abs(noise), [1, 2, 3], keep_dims=True)
     # noise = momentum * grad + noise
     # Project cut noise
-    amplification += alpha_beta * tf.sign(noise)
+    amplification += alpha_beta * n_staircase_sign(noise, num_of_K)
     cut_noise = tf.clip_by_value(abs(amplification) - eps, 0.0, 10000.0) * tf.sign(amplification)
-    projection = gamma * tf.sign(project_noise(cut_noise, P_kern, kern_size))
+    projection = gamma * n_staircase_sign(project_noise(cut_noise, P_kern, kern_size), num_of_K)
 
-    adv = adv - alpha_beta * tf.sign(noise) - projection
+    adv = adv - alpha_beta * n_staircase_sign(noise, num_of_K) - projection
     adv = tf.clip_by_value(adv, x_min, x_max)
     i = tf.add(i, 1)
     return adv, y, t_y, i, x_max, x_min, noise, amplification
