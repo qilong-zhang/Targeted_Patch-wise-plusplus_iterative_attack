@@ -62,16 +62,16 @@ P_kern, kern_size = project_kern(3)
 
 model_checkpoint_map = {
     'inception_v3': os.path.join(FLAGS.checkpoint_path, 'inception_v3.ckpt'),
-    'adv_inception_v3': os.path.join(FLAGS.checkpoint_path, 'adv_inception_v3_rename.ckpt'),
-    'ens3_adv_inception_v3': os.path.join(FLAGS.checkpoint_path, 'ens3_adv_inception_v3_rename.ckpt'),
-    'ens4_adv_inception_v3': os.path.join(FLAGS.checkpoint_path, 'ens4_adv_inception_v3_rename.ckpt'),
+    'adv_inception_v3': os.path.join(FLAGS.checkpoint_path, 'adv_inception_v3.ckpt'),
+    'ens3_adv_inception_v3': os.path.join(FLAGS.checkpoint_path, 'ens3_adv_inception_v3.ckpt'),
+    'ens4_adv_inception_v3': os.path.join(FLAGS.checkpoint_path, 'ens4_adv_inception_v3.ckpt'),
     'inception_v4': os.path.join(FLAGS.checkpoint_path, 'inception_v4.ckpt'),
     'inception_resnet_v2': os.path.join(FLAGS.checkpoint_path, 'inception_resnet_v2_2016_08_30.ckpt'),
-    'ens_adv_inception_resnet_v2': os.path.join(FLAGS.checkpoint_path, 'ens_adv_inception_resnet_v2_rename.ckpt'),
+    'ens_adv_inception_resnet_v2': os.path.join(FLAGS.checkpoint_path, 'ens_adv_inception_resnet_v2.ckpt'),
     'resnet_v2_101': os.path.join(FLAGS.checkpoint_path, 'resnet_v2_101.ckpt'),
     'vgg_16': os.path.join(FLAGS.checkpoint_path,'vgg_16.ckpt'),
     'resnet_v2_152': os.path.join(FLAGS.checkpoint_path,'resnet_v2_152.ckpt'),
-    'adv_inception_resnet_v2': os.path.join(FLAGS.checkpoint_path, 'adv_inception_resnet_v2_rename.ckpt'),
+    'adv_inception_resnet_v2': os.path.join(FLAGS.checkpoint_path, 'adv_inception_resnet_v2.ckpt'),
     'resnet_v2_50': os.path.join(FLAGS.checkpoint_path,'resnet_v2_50.ckpt')}
 
 
