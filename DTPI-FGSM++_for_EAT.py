@@ -11,10 +11,9 @@ from utils import *
 from numpy import pi, exp, sqrt
 from attack_method import *
 from tqdm import tqdm
-from tensorpack import TowerContext
+# from tensorpack import TowerContext
 from nets import inception_v3, inception_v4, inception_resnet_v2, resnet_v2, resnet_v1
-import fdnets
-from tensorpack.tfutils import get_model_loader
+# from tensorpack.tfutils import get_model_loader
 from tensorpack.tfutils.scope_utils import auto_reuse_variable_scope
 import os
 import cv2
@@ -146,11 +145,11 @@ def graph(adv, y, t_y, i, x_max, x_min, grad, amplification):
     # noise = noise / tf.reduce_mean(tf.abs(noise), [1, 2, 3], keep_dims=True)
     # noise = momentum * grad + noise
     # Project cut noise
-    amplification += alpha_beta * n_staircase_sign(noise, num_of_K)
+    amplification += alpha_beta * tf.sign(noise)
     cut_noise = tf.clip_by_value(abs(amplification) - eps, 0.0, 10000.0) * tf.sign(amplification)
-    projection = gamma * n_staircase_sign(project_noise(cut_noise, P_kern, kern_size), num_of_K)
+    projection = gamma * tf.sign(project_noise(cut_noise, P_kern, kern_size))
 
-    adv = adv - alpha_beta * n_staircase_sign(noise, num_of_K) - projection
+    adv = adv - alpha_beta * tf.sign(noise) - projection
     adv = tf.clip_by_value(adv, x_min, x_max)
     i = tf.add(i, 1)
     return adv, y, t_y, i, x_max, x_min, noise, amplification
