@@ -13,7 +13,7 @@ from attack_method import *
 from tqdm import tqdm
 from tensorpack import TowerContext
 from nets import inception_v3, inception_v4, inception_resnet_v2, resnet_v2, resnet_v1
-from tensorpack.tfutils import get_model_loader
+# from tensorpack.tfutils import get_model_loader
 from tensorpack.tfutils.scope_utils import auto_reuse_variable_scope
 import os
 import cv2
